@@ -128,8 +128,9 @@ body {
     padding: 40px 12px;
     gap: 40px;
   }
+
   .blinking-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 16px;
   }
 
