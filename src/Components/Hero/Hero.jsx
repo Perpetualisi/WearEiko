@@ -3,7 +3,7 @@ import './Hero.css';
 import { useNavigate } from 'react-router-dom';
 
 const images = [
-  '/hero/hero1.JPG',
+  '/hero/hero1 - Copy.JPG',
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
   '/hero/hero4.jpg',
