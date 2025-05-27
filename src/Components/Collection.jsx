@@ -2,37 +2,56 @@ import React from 'react';
 import './Collection.css';
 import { Link } from 'react-router-dom';
 
-
-const imageSets = [
+const bridalCollection = [
   ['/design/brides1a.JPG', '/design/brides1b.JPG', '/design/brides1b.JPG'],
   ['/design/brides2a.JPG', '/design/brides2b.JPG', '/design/brides2c.JPG'],
-  ['/design/brides3a.jpg', '/design/brides3b.jpg', '/design/brides3c.jpg'],
-  ['/design/brides4a.JPG', '/design/brides4b.JPG', '/design/brides4c.JPG'],
-  ['/design/brides5a.jpg', '/design/brides5b.jpg', '/design/brides5c.jpg'],
-  ['/design/brides6a.jpg', '/design/brides6b.jpg', '/design/brides6a.jpg'],
-  ['/design/brides7a.jpg', '/design/brides7b.jpg', '/design/brides7c.jpg'],
-  ['/design/brides8a.jpg', '/design/brides8b.jpg', '/design/brides8c.jpg'],
-  ['/design/brides9a.jpg', '/design/brides9b.jpg', '/design/brides9c.jpg'],
-  ['/design/brides10a.jpg', '/design/brides10b.jpg', '/design/brides10c.jpg'],
+  ['/design/brides3a.JPG', '/design/brides3b.JPG', '/design/brides3c.JPG'],
+  ['/design/brides4a.jpg', '/design/brides4b.jpg', '/design/brides4c.jpg'],
+  ['/design/brides5a.jpg', '/design/brides5b.jpg', '/design/brides5c.jpg', '/design/brides5d.jpg'],
+];
+
+const bespokeDresses = [
+  ['/design/beskpoke1a.jpg', '/design/beskpoke1b.jpg', '/design/beskpoke1c.jpg'],
+  ['/design/beskpoke2a.jpg', '/design/beskpoke2b.jpg', '/design/beskpoke2c.jpg'],
+  ['/design/beskpoke3a.jpg', '/design/beskpoke3b.jpg', '/design/beskpoke3c.jpg'],
+  ['/design/beskpoke4a.jpg', '/design/beskpoke4b.jpg', '/design/beskpoke4c.jpg'],
+  ['/design/beskpoke5a.jpg', '/design/beskpoke5b.jpg', '/design/beskpoke5c.jpg'],
+  ['/design/beskpoke6a.jpg', '/design/beskpoke6b.jpg', '/design/beskpoke6c.jpg'],
+  ['/design/beskpoke7a.jpg', '/design/beskpoke7b.jpg', '/design/beskpoke7c.jpg'],
+  ['/design/beskpoke8a.jpg', '/design/beskpoke8b.jpg', '/design/beskpoke8a - Copy.jpg'],
+  ['/design/beskpoke9a.jpeg', '/design/beskpoke9b.jpeg', '/design/beskpoke9a.jpeg'],
+  ['/design/beskpoke10a.jpg', '/design/beskpoke10b.jpg', '/design/beskpoke10c.jpg'],
+  ['/design/beskpoke11a.jpg', '/design/beskpoke11b.jpg', '/design/beskpoke11c.jpg'],
 ];
 
 const Collection = () => {
   return (
     <section className="collection-section">
-      <div className="top-static-image">
+      <div className="top-static-image"></div>
+
+      <div className="category-section">
+        <h2 className="category-heading">Bridal Collection</h2>
+        <div className="blinking-grid">
+          {bridalCollection.map((set, index) => (
+            <BlinkingCard key={`bridal-${index}`} images={set} />
+          ))}
+        </div>
       </div>
 
-      <div className="blinking-grid">
-        {imageSets.map((set, index) => (
-          <BlinkingCard key={index} images={set} />
-        ))}
+      <div className="category-section">
+        <h2 className="category-heading">Bespoke Dresses</h2>
+        <div className="blinking-grid">
+          {bespokeDresses.map((set, index) => (
+            <BlinkingCard key={`bespoke-${index}`} images={set} />
+          ))}
+        </div>
       </div>
 
-<div className="inquiry-container">
-  <Link to="/contact">
-    <button className="inquiry-button">MAKE INQUIRY</button>
-  </Link>
-</div>
+      <div className="inquiry-container">
+        <Link to="/contact">
+          <button className="inquiry-button">MAKE INQUIRY</button>
+        </Link>
+      </div>
     </section>
   );
 };
@@ -49,7 +68,7 @@ const BlinkingCard = ({ images }) => {
 
   return (
     <div className="blinking-card">
-      <img src={images[current]} alt="Bride Design" />
+      <img src={images[current]} alt="Design Sample" />
     </div>
   );
 };

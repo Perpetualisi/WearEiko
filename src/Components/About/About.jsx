@@ -49,31 +49,30 @@ const About = () => {
         <h2 className="typing-heading">{text}<span className="cursor">|</span></h2>
 
         <p className="fade-in delay-1">
-          <strong>WearEiko</strong> is more than just a fashion brand, it's a movement that celebrates the power of self-expression through style.
-          Born from a vision to merge rich African heritage with contemporary design, WearEiko represents a new wave of fashion that dares to be bold, artistic, and unapologetically authentic.
+          <strong>WearEiko</strong> is a fashion movement that blends African heritage with bold, modern design empowering self-expression through style.
         </p>
 
         <p className="fade-in delay-2">
-          From vibrant Ankara, to minimalist neutrals, to exotic designs for your special celebrations, to opulent bridal ensembles, our collections are curated to suit your unique taste and personality.
+          From vibrant Ankara prints to chic neutrals and special-occasion looks, our pieces are curated to reflect your unique personality.
         </p>
 
         <p className="fade-in delay-3">
-          Every thread in our garments is carefully selected and stitched with purpose. From vibrant Ankara prints to minimalist neutrals, our collections are curated for individuals who dress with meaning. 
-          We create for the trendsetter, the dreamer, the professional, and the creative — those who know that what you wear is a reflection of who you are and what you stand for.
+          Every garment is crafted with care and meaning for dreamers, professionals, and creatives who dress with purpose.
         </p>
 
         <p className="fade-in delay-4">
-          At WearEiko, craftsmanship meets culture. Our pieces are locally inspired and globally admired, designed to transcend occasions. Whether you’re stepping out for a business meeting, attending a celebration, or simply owning the streets, our fashion adapts to your rhythm without compromising identity.
+          Locally inspired, globally admired  our fashion transitions seamlessly from work to celebration, without compromising identity.
         </p>
 
         <p className="fade-in delay-5">
-          We are rooted in values of sustainability, inclusion, and innovation. Our goal is to empower communities, collaborate with artisans, and redefine fashion with purpose. Each release tells a story. Each fabric carries legacy. Each look empowers confidence.
+          Rooted in sustainability, inclusion, and innovation, WearEiko supports communities and tells stories through every stitch.
         </p>
 
         <p className="fade-in delay-6">
-          Welcome to WearEiko, where every piece is worn with pride, every outfit is a statement, and every design is a legacy in motion.
+          Welcome to WearEiko — where fashion is culture, and every look makes a statement.
         </p>
 
+        {/* Image Carousel */}
         <div className="image-carousel">
           <div className="carousel-track">
             {[1, 2, 3, 4, 5, 6].map((n) => (

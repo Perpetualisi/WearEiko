@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Hero.css';
-import { useNavigate } from 'react-router-dom'; // ✅ Already here
+import { useNavigate } from 'react-router-dom';
 
 const images = [
   '/hero/hero1.JPG',
@@ -22,7 +22,7 @@ const galleryImages = [
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
-  const navigate = useNavigate(); // ✅ Added this line
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const interval = setInterval(() => {
