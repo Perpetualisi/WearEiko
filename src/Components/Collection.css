@@ -135,10 +135,6 @@ body {
     border-radius: 16px;
   }
 
-  .blinking-card img {
-    border-radius: 16px;
-    height: auto;
-  }
 
   .inquiry-button {
     font-size: 1rem;
