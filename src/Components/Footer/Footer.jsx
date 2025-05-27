@@ -1,29 +1,8 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleScroll = (path, sectionId) => {
-    if (location.pathname !== path) {
-      navigate(path);
-      // Delay scroll until navigation completes
-      setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100); // adjust delay if needed
-    } else {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  };
-
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -35,11 +14,11 @@ const Footer = () => {
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><span onClick={() => handleScroll('/', 'home')}>Home</span></li>
-            <li><span onClick={() => handleScroll('/', 'collections')}>Collections</span></li>
-            <li><span onClick={() => handleScroll('/', 'order')}>Place an Order</span></li>
-            <li><span onClick={() => handleScroll('/', 'about')}>About Us</span></li>
-            <li><span onClick={() => handleScroll('/', 'contact')}>Contact</span></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/collection">Collections</Link></li>
+            <li><Link to="/order">Place anOrder</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 

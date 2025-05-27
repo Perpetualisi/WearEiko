@@ -34,7 +34,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="hero-section">
+      <section id='home' className="hero-section">
         <div className="hero-left">
           <h1 className="brand-title">WearEiko</h1>
           <p className="subtitle">

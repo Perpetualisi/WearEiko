@@ -7,6 +7,7 @@ import Contact from './Components/Contact/Contact';
 import Collection from './Components/Collection';
 import MakeAnOrder from './Components/MakeAnOrder'; 
 import Footer from './Components/Footer/Footer';
+import ScrollToTop from './ScrollToTop'; // ✅ import this
 import './App.css';
 
 const App = () => {
@@ -14,7 +15,9 @@ const App = () => {
 
   return (
     <>
+      <ScrollToTop /> {/* ✅ Add this here */}
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/about" element={<About />} />

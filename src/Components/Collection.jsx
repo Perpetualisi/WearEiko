@@ -26,7 +26,7 @@ const bespokeDresses = [
 
 const Collection = () => {
   return (
-    <section className="collection-section">
+    <section id='collection' className="collection-section">
       <div className="top-static-image"></div>
 
       <div className="category-section">
