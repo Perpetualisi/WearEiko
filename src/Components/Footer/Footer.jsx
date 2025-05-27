@@ -1,12 +1,26 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
-  // Scroll to section by ID with smooth scroll
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleScroll = (path, sectionId) => {
+    if (location.pathname !== path) {
+      navigate(path);
+      // Delay scroll until navigation completes
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100); // adjust delay if needed
+    } else {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
@@ -21,31 +35,11 @@ const Footer = () => {
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li>
-              <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#collections" onClick={(e) => { e.preventDefault(); scrollToSection('collections'); }}>
-                Collections
-              </a>
-            </li>
-            <li>
-              <a href="#order" onClick={(e) => { e.preventDefault(); scrollToSection('order'); }}>
-                Place an Order
-              </a>
-            </li>
-            <li>
-              <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>
-                Contact
-              </a>
-            </li>
+            <li><span onClick={() => handleScroll('/', 'home')}>Home</span></li>
+            <li><span onClick={() => handleScroll('/', 'collections')}>Collections</span></li>
+            <li><span onClick={() => handleScroll('/', 'order')}>Place an Order</span></li>
+            <li><span onClick={() => handleScroll('/', 'about')}>About Us</span></li>
+            <li><span onClick={() => handleScroll('/', 'contact')}>Contact</span></li>
           </ul>
         </div>
 
