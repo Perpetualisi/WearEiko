@@ -7,17 +7,17 @@ const images = [
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
   '/hero/hero4.jpg',
-  '/hero/hero6.jpg',
-  '/hero/hero5.JPG'
+  '/hero/hero6 - Copy.jpg',
+  '/hero/hero5 - Copy.JPG'
 ];
 
 const galleryImages = [
-  '/hero/hero1.JPG',
+  'public/hero/hero1 - Copy.JPG',
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
   '/hero/hero4.jpg',
-  '/hero/hero6.jpg',
-  '/hero/hero5.JPG',
+  '/hero/hero6 - Copy.jpg',
+  '/hero/hero5 - Copy.JPG',
 ];
 
 const Hero = () => {
