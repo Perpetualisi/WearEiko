@@ -6,6 +6,7 @@ import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import Collection from './Components/Collection';
 import MakeAnOrder from './Components/MakeAnOrder'; 
+import Footer from './Components/Footer/Footer';
 import './App.css';
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/collection" element={<Collection />} />
-        <Route path="/order" element={<MakeAnOrder />} /> 
+        <Route path="/order" element={<MakeAnOrder />} />
       </Routes>
 
       <div className="contact-toggle-container">
@@ -54,6 +55,8 @@ const App = () => {
           </div>
         )}
       </div>
+
+      <Footer />
     </>
   );
 };
