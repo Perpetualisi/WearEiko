@@ -46,3 +46,6 @@ body, html {
 .read-the-docs {
   color: #888;
 }
+html {
+  scroll-behavior: smooth;
+}

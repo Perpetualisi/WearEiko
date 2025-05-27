@@ -1,8 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
+  // Scroll to section by ID with smooth scroll
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -14,11 +21,31 @@ const Footer = () => {
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/collection">Collections</Link></li>
-            <li><Link to="/order">Place an Order</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li>
+              <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#collections" onClick={(e) => { e.preventDefault(); scrollToSection('collections'); }}>
+                Collections
+              </a>
+            </li>
+            <li>
+              <a href="#order" onClick={(e) => { e.preventDefault(); scrollToSection('order'); }}>
+                Place an Order
+              </a>
+            </li>
+            <li>
+              <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>
+                Contact
+              </a>
+            </li>
           </ul>
         </div>
 
