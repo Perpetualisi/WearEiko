@@ -18,6 +18,7 @@ const galleryImages = [
   '/hero/hero4.jpg',
   '/hero/hero6 - Copy.jpg',
   '/hero/hero5 - Copy.JPG',
+  '/hero/hero4 - Copy.jpg',
 ];
 
 const Hero = () => {
