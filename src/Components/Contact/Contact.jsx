@@ -18,9 +18,7 @@ const Contact = () => {
 
   const headings = [
     "Let's Design Your Dream Look",
-    "Elegance Tailored to You",
     "Crafting Bridal Perfection",
-    "WearEiko — Where Style Meets Grace",
     "Dresses for Unforgettable Moments",
     "Fashioned for Your Big Day",
     "Luxury Looks for Every Occasion",
