@@ -3,21 +3,21 @@ import './Hero.css';
 import { useNavigate } from 'react-router-dom';
 
 const images = [
-  '/hero/hero1.JPG',
+  '/hero/hero1.jpg',
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
   '/hero/hero4.jpg',
   '/hero/hero6.jpg',
-  '/hero/hero5.JPG'
+  '/hero/hero5.jpg'
 ];
 
 const galleryImages = [
-  '/hero/hero1.JPG',
+  '/hero/hero1.jpg',
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
   '/hero/hero4.jpg',
   '/hero/hero6.jpg',
-  '/hero/hero5.JPG'
+  '/hero/hero5.jpg'
 ];
 
 const Hero = () => {
