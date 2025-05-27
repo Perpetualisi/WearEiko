@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 .about-section {
-  padding: 4rem 2rem;
   background-color: #f1e8e8;
+    padding: 6rem 2rem; 
   color: #333;
   text-align: center;
   margin-top: 2rem;
+  
   font-family: 'Poppins', sans-serif;
 }
 
@@ -89,7 +90,7 @@
   }
 
   .about-section {
-    padding: 2rem 1rem;
+    padding: 4rem 2rem; 
   }
 
   .about-container {
