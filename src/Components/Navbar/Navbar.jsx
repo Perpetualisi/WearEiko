@@ -15,6 +15,12 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLinkClick = () => {
+    setIsDesignDropdownOpen(false);
+    setIsBottomDropdownOpen(false);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -36,8 +42,12 @@ const Navbar = () => {
                 <span>OUR DESIGN ▾</span>
                 {isDesignDropdownOpen && (
                   <ul className="dropdown-menu">
-                    <li><Link to="/collection">Collections</Link></li>
-                    <li><Link to="/order">Make an Order</Link></li>
+                    <li>
+                      <Link to="/collection" onClick={handleLinkClick}>Collections</Link>
+                    </li>
+                    <li>
+                      <Link to="/order" onClick={handleLinkClick}>Make an Order</Link>
+                    </li>
                   </ul>
                 )}
               </li>
@@ -49,35 +59,35 @@ const Navbar = () => {
 
         {isMobileMenuOpen && (
           <div className="mobile-menu">
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+            <Link to="/" onClick={handleLinkClick}>Home</Link>
             <div className="mobile-dropdown">
               <span onClick={() => setIsDesignDropdownOpen(!isDesignDropdownOpen)}>Our Design ▾</span>
               {isDesignDropdownOpen && (
                 <div className="mobile-dropdown-menu">
-                  <Link to="/collection" onClick={() => setIsMobileMenuOpen(false)}>Collections</Link>
-                  <Link to="/order" onClick={() => setIsMobileMenuOpen(false)}>Make an Order</Link>
+                  <Link to="/collection" onClick={handleLinkClick}>Collections</Link>
+                  <Link to="/order" onClick={handleLinkClick}>Make an Order</Link>
                 </div>
               )}
             </div>
-            <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Make an Inquiry</Link>
+            <Link to="/about" onClick={handleLinkClick}>About Us</Link>
+            <Link to="/contact" onClick={handleLinkClick}>Make an Inquiry</Link>
           </div>
         )}
       </nav>
 
       <div className="mobile-bottom-nav">
-        <Link to="/">Home</Link>
+        <Link to="/" onClick={handleLinkClick}>Home</Link>
         <div className="mobile-bottom-dropdown">
           <span onClick={() => setIsBottomDropdownOpen(!isBottomDropdownOpen)}>Our Design ▾</span>
           {isBottomDropdownOpen && (
             <div className="mobile-bottom-dropdown-menu">
-              <Link to="/collection">Collections</Link>
-              <Link to="/order">Make an Order</Link>
+              <Link to="/collection" onClick={handleLinkClick}>Collections</Link>
+              <Link to="/order" onClick={handleLinkClick}>Make an Order</Link>
             </div>
           )}
         </div>
-        <Link to="/about">About Us</Link>
-        <Link to="/contact">Make an Inquiry</Link>
+        <Link to="/about" onClick={handleLinkClick}>About Us</Link>
+        <Link to="/contact" onClick={handleLinkClick}>Make an Inquiry</Link>
       </div>
     </>
   );
