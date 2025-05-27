@@ -99,11 +99,15 @@
 
 @media (max-width: 480px) {
   .carousel-track img {
-    width: 150px;
-    margin-right: 0.5rem;
+    width: 120px;       
+    margin-right: 0.4rem;
   }
 
   .typing-heading {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .about-section {
+    padding: 1.5rem 0.5rem;
   }
 }
