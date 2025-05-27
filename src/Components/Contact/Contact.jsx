@@ -140,7 +140,7 @@ const Contact = () => {
               </a>
             </p>
             <p><strong>📧 Email:</strong>{' '}
-              <a href="mailto:www.weareiko@gmail.com">www.weareiko@gmail.com</a>
+              <a href="mailto:www.weareiko@gmail.com">weareiko@gmail.com</a>
             </p>
             <p><strong>📞 Phone:</strong>{' '}
               <a href="tel:+2349050252476">09050252476</a>
