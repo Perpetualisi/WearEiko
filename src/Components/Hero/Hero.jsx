@@ -12,7 +12,7 @@ const images = [
 ];
 
 const galleryImages = [
-  'public/hero/hero1 - Copy.JPG',
+  'public/hero/hero1.JPG',
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
   '/hero/hero4.jpg',
