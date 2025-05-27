@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const bridalCollection = [
   ['/design/brides1a - Copy.JPG', '/design/brides1b - Copy.JPG', '/design/brides1c - Copy.JPG'],
   ['/design/brides2a - Copy.JPG', '/design/brides2b - Copy.JPG', '/design/brides2c - Copy.JPG'],
-  ['/design/brides3a.JPG', '/design/brides3b.JPG', '/design/brides3c.JPG'],
+  ['/design/brides3a - Copy.JPG', '/design/brides3b - Copy.JPG', '/design/brides3c - Copy.JPG'],
   ['/design/brides4a.jpg', '/design/brides4b.jpg', '/design/brides4c.jpg'],
   ['/design/brides5a.jpg', '/design/brides5b.jpg', '/design/brides5c.jpg', '/design/brides5d.jpg'],
 ];
