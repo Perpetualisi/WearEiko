@@ -7,7 +7,7 @@ const images = [
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
   '/hero/hero4.jpg',
-  '/hero/about6.jpg',
+  '/hero/hero6.jpg',
   '/hero/hero5.JPG'
 ];
 
@@ -16,7 +16,7 @@ const galleryImages = [
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
   '/hero/hero4.jpg',
-  '/hero/about6.jpg',
+  '/hero/hero6.jpg',
   '/hero/hero5.JPG'
 ];
 
