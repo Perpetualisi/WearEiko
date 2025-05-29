@@ -5,9 +5,10 @@ import Hero from './Components/Hero/Hero';
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import Collection from './Components/Collection';
-import MakeAnOrder from './Components/MakeAnOrder'; 
+import MakeAnOrder from './Components/MakeAnOrder';
+import ThankYou from './Components/ThankYou'; 
 import Footer from './Components/Footer/Footer';
-import ScrollToTop from './ScrollToTop'; // ✅ import this
+import ScrollToTop from './ScrollToTop';
 import './App.css';
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
 
   return (
     <>
-      <ScrollToTop /> {/* ✅ Add this here */}
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/collection" element={<Collection />} />
         <Route path="/order" element={<MakeAnOrder />} />
+        <Route path="/thank-you" element={<ThankYou />} /> 
       </Routes>
 
       <div className="contact-toggle-container">

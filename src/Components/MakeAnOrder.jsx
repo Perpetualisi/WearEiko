@@ -1,27 +1,35 @@
 import React from 'react';
-import emailjs from '@emailjs/browser';
+import { useNavigate } from 'react-router-dom';
 import './MakeAnOrder.css';
 
 const MakeAnOrder = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
 
-    emailjs.sendForm(
-      'service_c4ssxdp',      // Your EmailJS Service ID
-      'template_50ofd27',     // Replace with your Template ID
-      e.target,
-      'Q-wqqOPJmv_v2YNEC'       // Replace with your Public Key
-    ).then(
-      (result) => {
-        console.log('SUCCESS!', result.text);
-        alert('Order submitted successfully!');
-        e.target.reset();
-      },
-      (error) => {
-        console.log('FAILED...', error.text);
-        alert('Something went wrong. Please try again.');
-      }
-    );
+    fetch("https://formsubmit.co/ajax/www.weareiko@gmail.com", {
+      method: "POST",
+      body: formData
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log("FormSubmit response:", data); 
+
+        if (data.success || data.message === "Form submitted successfully") {
+          form.reset();
+          navigate('/thank-you'); 
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Submission error:", error);
+        alert("There was an error. Please try again.");
+      });
   };
 
   return (
@@ -29,20 +37,24 @@ const MakeAnOrder = () => {
       <h2>Place an Order</h2>
       <p className="subtitle">Fill out the form below to start your dream outfit.</p>
 
-      <form className="order-form" onSubmit={handleSubmit}>
+      <form
+        className="order-form"
+        onSubmit={handleSubmit}
+        encType="multipart/form-data"
+      >
         <div className="form-group">
           <label>Full Name:</label>
-          <input type="text" name="fullName" placeholder="Enter your full name" required />
+          <input type="text" name="fullName" required />
         </div>
 
         <div className="form-group">
           <label>Email:</label>
-          <input type="email" name="email" placeholder="Enter your email" required />
+          <input type="email" name="email" required />
         </div>
 
         <div className="form-group">
           <label>Phone Number:</label>
-          <input type="tel" name="phone" placeholder="Enter your phone number" required />
+          <input type="tel" name="phone" required />
         </div>
 
         <div className="form-group">
@@ -64,18 +76,21 @@ const MakeAnOrder = () => {
 
         <div className="form-group">
           <label>Budget Range (₦):</label>
-          <input type="text" name="budget" placeholder="E.g. 50,000 - 150,000" />
+          <input type="text" name="budget" />
         </div>
 
         <div className="form-group">
           <label>Upload Sample Image (optional):</label>
-          <input type="file" name="image" accept="image/*" />
+          <input type="file" name="attachment" accept="image/*" />
         </div>
 
         <div className="form-group">
           <label>Additional Details:</label>
-          <textarea name="details" placeholder="Measurements, colors, fabric ideas..." rows="5"></textarea>
+          <textarea name="details" rows="5"></textarea>
         </div>
+
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="New Order from WearEiko" />
 
         <button type="submit" className="submit-btn">Submit Order</button>
       </form>

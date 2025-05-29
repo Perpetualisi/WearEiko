@@ -1,19 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    phone: '',
-    budget: '',
-    projectType: '',
-  });
-
-  const [status, setStatus] = useState('');
   const [headingIndex, setHeadingIndex] = useState(0);
 
   const headings = [
@@ -31,83 +19,40 @@ const Contact = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        'service_c4ssxdp',
-        'template_50ofd27',
-        e.target,
-        'Q-wqqOPJmv_v2YNEC'
-      )
-      .then(
-        () => {
-          setStatus('Thank you for reaching out to WearEiko. We’ll be in touch shortly!');
-          setFormData({
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-            phone: '',
-            budget: '',
-            projectType: '',
-          });
-        },
-        () => {
-          setStatus('Something went wrong. Please try again.');
-        }
-      );
-
-    setTimeout(() => setStatus(''), 4000);
-  };
-
   return (
     <section className="v-contact" id="contact">
       <div className="v-container">
         <h2 className="v-heading animate-fade-slide">{headings[headingIndex]}</h2>
         <div className="v-grid">
-          <form className="v-form" onSubmit={handleSubmit}>
+          <form
+            className="v-form"
+            action="https://formsubmit.co/weareiko@gmail.com"
+            method="POST"
+          >
             <input
               type="text"
               name="name"
               placeholder="Full Name"
               required
-              value={formData.name}
-              onChange={handleChange}
             />
             <input
               type="email"
               name="email"
               placeholder="Email Address"
               required
-              value={formData.email}
-              onChange={handleChange}
             />
             <input
               type="text"
               name="phone"
               placeholder="Phone (Optional)"
-              value={formData.phone}
-              onChange={handleChange}
             />
             <input
               type="text"
               name="subject"
               placeholder="Event Type (e.g. Wedding, Party)"
               required
-              value={formData.subject}
-              onChange={handleChange}
             />
-            <select
-              name="projectType"
-              value={formData.projectType}
-              onChange={handleChange}
-            >
+            <select name="projectType">
               <option value="">Service Type</option>
               <option>Custom Dress</option>
               <option>Bridal Consultation</option>
@@ -118,18 +63,17 @@ const Contact = () => {
               type="text"
               name="budget"
               placeholder="Budget Range (Optional)"
-              value={formData.budget}
-              onChange={handleChange}
             />
             <textarea
               name="message"
               placeholder="Tell us more about your event or desired look"
               required
-              value={formData.message}
-              onChange={handleChange}
             ></textarea>
+
+            <input type="hidden" name="_next" value="https://wear-eiko-perpetuals-projects-36af2065.vercel.app/thank-you" />
+            <input type="hidden" name="_captcha" value="false" />
+
             <button type="submit" className="v-btn">Get Styled</button>
-            {status && <p className="v-status">{status}</p>}
           </form>
 
           <div className="v-info">
@@ -140,7 +84,7 @@ const Contact = () => {
               </a>
             </p>
             <p><strong>📧 Email:</strong>{' '}
-              <a href="mailto:www.weareiko@gmail.com">weareiko@gmail.com</a>
+              <a href="mailto:www.weareiko@gmail.com">www.weareiko@gmail.com</a>
             </p>
             <p><strong>📞 Phone:</strong>{' '}
               <a href="tel:+2349050252476">09050252476</a>

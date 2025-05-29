@@ -46,7 +46,7 @@ const Navbar = () => {
                       <Link to="/collection" onClick={handleLinkClick}>Collections</Link>
                     </li>
                     <li>
-                      <Link to="/order" onClick={handleLinkClick}>Make an Order</Link>
+                      <Link to="/order" onClick={handleLinkClick}>Place an Order</Link>
                     </li>
                   </ul>
                 )}

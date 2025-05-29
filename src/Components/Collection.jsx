@@ -30,7 +30,7 @@ const Collection = () => {
       <div className="top-static-image"></div>
 
       <div className="category-section">
-        <h2 className="category-heading">Bridal Collection</h2>
+        <h2 className="category-heading">Bridal Collections</h2>
         <div className="blinking-grid">
           {bridalCollection.map((set, index) => (
             <BlinkingCard key={`bridal-${index}`} images={set} />
@@ -62,7 +62,7 @@ const BlinkingCard = ({ images }) => {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 10000);
+    }, 8000);
     return () => clearInterval(interval);
   }, [images]);
 
