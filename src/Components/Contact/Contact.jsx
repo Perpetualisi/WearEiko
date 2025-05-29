@@ -70,7 +70,7 @@ const Contact = () => {
               required
             ></textarea>
 
-            <input type="hidden" name="_next" value="https://wear-eiko-perpetuals-projects-36af2065.vercel.app/thank-you" />
+<input type="hidden" name="_next" value="https://wear-eiko-perpetuals-projects-36af2065.vercel.app/thank-you" />
             <input type="hidden" name="_captcha" value="false" />
 
             <button type="submit" className="v-btn">Get Styled</button>
@@ -87,7 +87,7 @@ const Contact = () => {
               <a href="mailto:www.weareiko@gmail.com">www.weareiko@gmail.com</a>
             </p>
             <p><strong>📞 Phone:</strong>{' '}
-              <a href="tel:+2349050252476">09050252476</a>
+              <a href="tel:+2349050252476">+2349050252476</a>
             </p>
             <div className="v-social-wrapper">
               <div className="v-social">
