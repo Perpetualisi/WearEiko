@@ -51,7 +51,7 @@ const App = () => {
               📞 Call
             </a>
             <a
-              href="mailto:weareiko@gmail.com"
+              href="mailto:www.weareiko@gmail.com"
               className="contact-option"
               title="Send Email"
             >

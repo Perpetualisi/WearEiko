@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>Contact Us</h4>
           <p>📞 <a href="tel:+2349050252476">+234 905 025 2476</a></p>
-          <p>✉️ <a href="mailto:weareiko@gmail.com">weareiko@gmail.com</a></p>
+          <p>✉️ <a href="mailto:www.weareiko@gmail.com">www.weareiko@gmail.com</a></p>
           <p>🟢 <a href="https://wa.me/2349050252476" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
         </div>
       </div>

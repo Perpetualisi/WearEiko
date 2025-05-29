@@ -26,7 +26,7 @@ const Contact = () => {
         <div className="v-grid">
           <form
             className="v-form"
-            action="https://formsubmit.co/weareiko@gmail.com"
+            action="https://formsubmit.co/www.weareiko@gmail.com"
             method="POST"
           >
             <input
