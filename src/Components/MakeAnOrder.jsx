@@ -11,7 +11,7 @@ const MakeAnOrder = () => {
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("https://formsubmit.co/ajax/www.weareiko@gmail.com", {
+    fetch("https://formsubmit.co/ajax/f1079b24dd4aed33709642b3e40c01df", {
       method: "POST",
       body: formData
     })
