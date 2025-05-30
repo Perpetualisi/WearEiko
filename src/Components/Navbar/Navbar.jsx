@@ -65,7 +65,7 @@ const Navbar = () => {
               {isDesignDropdownOpen && (
                 <div className="mobile-dropdown-menu">
                   <Link to="/collection" onClick={handleLinkClick}>Collections</Link>
-                  <Link to="/order" onClick={handleLinkClick}>Make an Order</Link>
+                  <Link to="/order" onClick={handleLinkClick}>Place an Order</Link>
                 </div>
               )}
             </div>
