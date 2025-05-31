@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaHome, FaTshirt, FaInfoCircle, FaEnvelope } from 'react-icons/fa';
 
 import './Navbar.css';
 
@@ -59,9 +60,18 @@ const Navbar = () => {
 
         {isMobileMenuOpen && (
           <div className="mobile-menu">
-            <Link to="/" onClick={handleLinkClick}>Home</Link>
+            <Link to="/" onClick={handleLinkClick}>
+              <div className="icon-link">
+                <FaHome />
+                <span>Home</span>
+              </div>
+            </Link>
+
             <div className="mobile-dropdown">
-              <span onClick={() => setIsDesignDropdownOpen(!isDesignDropdownOpen)}>Our Design ▾</span>
+              <div className="icon-link" onClick={() => setIsDesignDropdownOpen(!isDesignDropdownOpen)}>
+                <FaTshirt />
+                <span>Our Design ▾</span>
+              </div>
               {isDesignDropdownOpen && (
                 <div className="mobile-dropdown-menu">
                   <Link to="/collection" onClick={handleLinkClick}>Collections</Link>
@@ -69,16 +79,37 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <Link to="/about" onClick={handleLinkClick}>About Us</Link>
-            <Link to="/contact" onClick={handleLinkClick}>Make an Inquiry</Link>
+
+            <Link to="/about" onClick={handleLinkClick}>
+              <div className="icon-link">
+                <FaInfoCircle />
+                <span>About Us</span>
+              </div>
+            </Link>
+
+            <Link to="/contact" onClick={handleLinkClick}>
+              <div className="icon-link">
+                <FaEnvelope />
+                <span>Make an Inquiry</span>
+              </div>
+            </Link>
           </div>
         )}
       </nav>
 
       <div className="mobile-bottom-nav">
-        <Link to="/" onClick={handleLinkClick}>Home</Link>
+        <Link to="/" onClick={handleLinkClick}>
+          <div className="icon-link">
+            <FaHome />
+            <span>Home</span>
+          </div>
+        </Link>
+
         <div className="mobile-bottom-dropdown">
-          <span onClick={() => setIsBottomDropdownOpen(!isBottomDropdownOpen)}>Our Design ▾</span>
+          <div className="icon-link" onClick={() => setIsBottomDropdownOpen(!isBottomDropdownOpen)}>
+            <FaTshirt />
+            <span>Our Design ▾</span>
+          </div>
           {isBottomDropdownOpen && (
             <div className="mobile-bottom-dropdown-menu">
               <Link to="/collection" onClick={handleLinkClick}>Collections</Link>
@@ -86,8 +117,20 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <Link to="/about" onClick={handleLinkClick}>About Us</Link>
-        <Link to="/contact" onClick={handleLinkClick}>Make an Inquiry</Link>
+
+        <Link to="/about" onClick={handleLinkClick}>
+          <div className="icon-link">
+            <FaInfoCircle />
+            <span>About Us</span>
+          </div>
+        </Link>
+
+        <Link to="/contact" onClick={handleLinkClick}>
+          <div className="icon-link">
+            <FaEnvelope />
+            <span>Inquiry</span>
+          </div>
+        </Link>
       </div>
     </>
   );
