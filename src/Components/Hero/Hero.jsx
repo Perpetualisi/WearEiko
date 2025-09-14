@@ -3,9 +3,10 @@ import './Hero.css';
 import { useNavigate } from 'react-router-dom';
 
 const images = [
-  '/hero/hero1 - Copy.JPG',
+    '/hero/hero0.jpg',
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
+    '/hero/hero1 - Copy.JPG',
   '/hero/hero4.jpg',
   '/hero/hero6 - Copy.jpg',
   '/hero/hero5 - Copy.JPG'
@@ -16,6 +17,7 @@ const galleryImages = [
   '/hero/hero2.jpg',
   '/hero/hero3.jpg',
   '/hero/hero4.jpg',
+  '/hero/hero0.jpg',
   '/hero/hero6 - Copy.jpg',
   '/hero/hero5 - Copy.JPG',
   '/hero/hero4 - Copy.jpg',

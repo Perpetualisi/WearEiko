@@ -3,6 +3,7 @@ import './Collection.css';
 import { Link } from 'react-router-dom';
 
 const bridalCollection = [
+  ['/design/brides0a.jpg', '/design/brides0b.jpg', '/design/brides0c.jpg'],
   ['/design/brides1a - Copy.JPG', '/design/brides1b - Copy.JPG', '/design/brides1c - Copy.JPG'],
   ['/design/brides2a - Copy.JPG', '/design/brides2b - Copy.JPG', '/design/brides2c - Copy.JPG'],
   ['/design/brides3a - Copy.JPG', '/design/brides3b - Copy.JPG', '/design/brides3c - Copy.JPG'],
