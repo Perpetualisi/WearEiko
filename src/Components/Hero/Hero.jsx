@@ -74,8 +74,8 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* IMAGE SLIDER AREA */}
-        <div className="w-full md:w-1/2 h-[55vh] md:h-auto relative overflow-hidden bg-black order-first md:order-last">
+        {/* IMAGE SLIDER AREA - Adjusted height to prevent head cutoff */}
+        <div className="w-full md:w-1/2 h-[70vh] md:h-auto relative overflow-hidden bg-black order-first md:order-last">
           <img
             key={index}
             src={images[index]}
