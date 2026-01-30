@@ -1,127 +1,116 @@
+/* 1. Global Smoothing */
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent; /* Removes the blue flash on mobile taps */
 }
 
+/* 2. Floating Contact Toggle */
 .contact-toggle-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  pointer-events: none; /* Prevents container from blocking clicks behind it */
+}
+
+.main-toggle, .contact-options {
+  pointer-events: auto; /* Re-enables clicks for buttons */
 }
 
 .main-toggle {
-  background-color: #fff;
-  color: #fff;
-  padding: 14px;
+  background-color: #1a1a1a; /* Dark background for luxury look */
+  color: #ffffff;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-center: center;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 22px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  font-size: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
 }
 
 .main-toggle:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
+  background-color: #000;
 }
 
+/* 3. Contact Options Menu */
 .contact-options {
-  margin-top: 10px;
+  margin-bottom: 15px; /* Menu opens UPWARD from the button */
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  animation: fadeSlideIn 0.3s ease;
+  gap: 12px;
+  align-items: flex-end;
+  animation: fadeSlideUp 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .contact-option {
-  background-color: #25D366;
-  color: white;
+  background-color: #ffffff;
+  color: #1a1a1a;
   text-decoration: none;
-  padding: 10px 14px;
-  border-radius: 25px;
-  font-size: 16px;
-  transition: background 0.3s;
-  white-space: nowrap;
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .contact-option:hover {
-  background-color: #1ebe5d;
+  transform: translateX(-5px);
+  background-color: #fcfafa;
+  border-color: #eb4d8a; /* Pink brand highlight */
 }
 
-.contact-option:nth-child(2) {
-  background-color: #007bff;
-}
-
-.contact-option:nth-child(2):hover {
-  background-color: #0064d3;
-}
-
-@keyframes fadeSlideIn {
+/* 4. Animations */
+@keyframes fadeSlideUp {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(20px) scale(0.9);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-.blinking-card img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0;
-  animation: fadeZoom 1.4s ease-in-out;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+/* Blinking Card Specifics */
+.blinking-card {
+  position: relative;
+  overflow: hidden;
 }
 
+@keyframes fadeZoom {
+  0% { opacity: 0; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* 5. Mobile Responsiveness */
 @media (max-width: 768px) {
   .contact-toggle-container {
-    bottom: 80px;
-    right: 15px;
+    bottom: 20px; /* Adjusted so it's not floating too high */
+    right: 20px;
   }
 
   .main-toggle {
-    padding: 12px;
+    width: 50px;
+    height: 50px;
     font-size: 20px;
   }
 
   .contact-option {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-toggle {
-    padding: 10px;
-    font-size: 18px;
-  }
-
-  .contact-option {
+    padding: 10px 16px;
     font-size: 13px;
-    padding: 7px 10px;
-  }
-}
-@media (max-width: 400px) {
-  .contact-toggle-container {
-    bottom: 90px; 
-    right: 10px;
-  }
-
-  .main-toggle {
-    padding: 10px;
-    font-size: 18px;
-  }
-
-  .contact-option {
-    font-size: 13px;
-    padding: 7px 10px;
   }
 }

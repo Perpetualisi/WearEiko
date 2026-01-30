@@ -1,51 +1,76 @@
-#root {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0; 
-  text-align: center;
-  overflow-x: hidden;
+/* 1. RESET & CORE DEFAULTS */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-body, html {
-  overflow-x: hidden;
+
+html, body {
   margin: 0;
   padding: 0;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-html {
+  width: 100%;
+  /* Prevents the annoying "side-to-side" wobble on mobile */
+  overflow-x: hidden; 
+  background-color: #ffffff;
+  color: #1a1a1a;
   scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /* Removed text-align: center; so it doesn't mess up your Navbar/Collection layouts */
+}
+
+/* 2. TYPOGRAPHY GOTHAM/SERIF STYLE */
+h1, h2, h3, h4 {
+  margin: 0;
+  /* High-end fashion looks best with slightly increased letter spacing */
+  letter-spacing: 0.05em; 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* 3. SCROLLBAR CUSTOMIZATION (For Desktop Chrome/Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #eb4d8a; /* Pink brand accent */
+}
+
+/* 4. UTILITY CLASSES */
+.section-padding {
+  padding: 80px 20px;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 40px 15px;
+  }
+}
+
+/* 5. SELECTION COLOR */
+::selection {
+  background-color: #fce7f3; /* light pink */
+  color: #be185d; /* dark pink */
 }

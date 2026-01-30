@@ -2,27 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#be185d" /> <meta name="google-site-verification" content="EygtcZggft5clByY1Rrm9bP7lxVZ9vqaEsArNu2Akc0" />
 
-    <!-- ✅ Google Search Console Verification -->
-    <meta name="google-site-verification" content="EygtcZggft5clByY1Rrm9bP7lxVZ9vqaEsArNu2Akc0" />
+    <title>WearEiko | Bespoke Fashion & Bridal Collection</title>
 
-    <title>WearEiko - Stylish & Affordable Fashion</title>
-    <meta name="description" content="Shop affordable, stylish fashion at WearEiko. Comfortable and elegant clothing made for you." />
-    <meta name="keywords" content="WearEiko, fashion, affordable fashion, Lagos, Nigeria clothing, stylish wear" />
-    <meta name="author" content="WearEiko Team" />
+    <meta name="description" content="WearEiko: Where African heritage meets modern elegance. Discover bespoke bridal gowns and unique luxury pieces crafted in Benin City, Nigeria." />
+    <meta name="keywords" content="WearEiko, bridal collection Lagos, bespoke fashion Nigeria, African bridal wear, custom wedding dresses Benin City" />
+    <meta name="author" content="WearEiko" />
 
-    <meta property="og:title" content="WearEiko - Stylish & Affordable Fashion" />
-    <meta property="og:description" content="Affordable, elegant and modern outfits designed to fit your lifestyle." />
-    <meta property="og:url" content="https://www.weareiko.com" />
     <meta property="og:type" content="website" />
-    
-    <link rel="icon" href="/favicon.ico" />
+    <meta property="og:url" content="https://www.weareiko.com/" />
+    <meta property="og:title" content="WearEiko - Defining Your Unique Fashion Identity" />
+    <meta property="og:description" content="Explore our curated bridal and bespoke collections. Modern elegance rooted in tradition." />
+    <meta property="og:image" content="/og-image.jpg" /> <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="WearEiko - Bespoke Fashion" />
+    <meta property="twitter:description" content="Bold elegance and tradition-meets-modern craft." />
+    <meta property="twitter:image" content="/og-image.jpg" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Playfair Display", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            animation: {
+              'fade-in-stay': 'fadeInStay 1.2s ease-in-out forwards',
+              'marquee': 'scroll-marquee 35s linear infinite',
+              'bounce-subtle': 'bounceSubtle 3s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeInStay: {
+                '0%': { opacity: '0', transform: 'scale(1.01)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              'scroll-marquee': {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              bounceSubtle: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
+
+  <body class="bg-white text-black antialiased overflow-x-hidden selection:bg-pink-100 selection:text-pink-900">
+    <noscript>You need to enable JavaScript to view this site.</noscript>
+    
     <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
