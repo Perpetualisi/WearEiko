@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// 1. DATA ARRAYS (Must be defined before the Collection component uses them)
 const bridalCollection = [
   ['/design/brides0a.jpg', '/design/brides0b.jpg', '/design/brides0c.jpg'],
   ['/design/brides1a - Copy.JPG', '/design/brides1b - Copy.JPG', '/design/brides1c - Copy.JPG'],
@@ -29,7 +30,7 @@ const Collection = () => {
     <div className="bg-white min-h-screen">
       <section id="collection" className="max-w-7xl mx-auto px-5 md:px-10 py-8 md:py-16 flex flex-col gap-12 md:gap-20 font-sans">
         
-        {/* Bridal Section - Single Column on Mobile for Impact */}
+        {/* Bridal Section */}
         <section>
           <div className="flex items-center gap-4 mb-8 md:mb-12">
             <h2 className="text-lg md:text-2xl font-light uppercase tracking-[0.25em] text-zinc-900 whitespace-nowrap">Bridal</h2>
@@ -42,7 +43,7 @@ const Collection = () => {
           </div>
         </section>
 
-        {/* Bespoke Section - 2 Columns on Mobile for Scannability */}
+        {/* Bespoke Section */}
         <section>
           <div className="flex items-center gap-4 mb-8 md:mb-12">
             <h2 className="text-lg md:text-2xl font-light uppercase tracking-[0.25em] text-zinc-900 whitespace-nowrap">Bespoke</h2>
@@ -55,8 +56,7 @@ const Collection = () => {
           </div>
         </section>
 
-        {/* Responsive Footer */}
-        <footer className="flex justify-center pt-10 pb-24 md:pb-20">
+        <footer className="flex justify-center pt-10 pb-32">
           <Link to="/contact" className="w-full max-w-[300px] md:w-auto">
             <button className="w-full bg-zinc-900 text-white px-10 py-5 rounded-none text-[9px] md:text-[10px] tracking-[0.3em] font-bold hover:bg-zinc-800 transition-all active:scale-95 shadow-xl uppercase">
               Start a Commission
@@ -68,54 +68,32 @@ const Collection = () => {
   );
 };
 
+// 2. BLINKING CARD COMPONENT (Corrected with pre-loaded images)
 const BlinkingCard = ({ images }) => {
   const [index, setIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState(null);
 
   useEffect(() => {
-    if (images.length < 2) return;
+    if (!images || images.length < 2) return;
 
     const interval = setInterval(() => {
-      setNextIndex((index + 1) % images.length);
-      
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % images.length);
-        setNextIndex(null);
-      }, 1000); 
-    }, 5000);
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, [index, images]);
+  }, [images]);
 
   return (
-    <div className="group relative aspect-[3/4] overflow-hidden bg-zinc-50 border border-zinc-50 transition-all duration-500 hover:shadow-lg">
-      
-      {/* Current Image */}
-      <img
-        src={images[index]}
-        alt="Design view"
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
-      />
-
-      {/* Next Image (Overlay) */}
-      {nextIndex !== null && (
+    <div className="group relative aspect-[3/4] overflow-hidden bg-zinc-100 transition-all duration-500 hover:shadow-2xl">
+      {images.map((img, i) => (
         <img
-          src={images[nextIndex]}
-          alt="Next design view"
-          className="absolute inset-0 w-full h-full object-cover animate-fade-in"
+          key={img}
+          src={img}
+          alt={`View ${i}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out group-hover:scale-110 transform-gpu ${
+            i === index ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
         />
-      )}
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes fadeInSmall {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        .animate-fade-in {
-          animation: fadeInSmall 1000ms ease-in-out forwards;
-          will-change: opacity;
-        }
-      `}} />
+      ))}
     </div>
   );
 };

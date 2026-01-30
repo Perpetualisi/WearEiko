@@ -14,17 +14,15 @@ const App = () => {
   const [showOptions, setShowOptions] = useState(false);
   const location = useLocation();
 
-  // Close the contact menu automatically when the user changes pages
   useEffect(() => {
     setShowOptions(false);
   }, [location]);
 
   return (
-    <div className="flex flex-col min-h-screen selection:bg-pink-100 selection:text-pink-900">
+    <div className="flex flex-col min-h-screen selection:bg-zinc-200 selection:text-black">
       <ScrollToTop />
       <Navbar />
 
-      {/* Main Content Area */}
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Hero />} />
@@ -36,37 +34,42 @@ const App = () => {
         </Routes>
       </main>
 
-      {/* PREMIUM FLOATING CONTACT TOGGLE */}
-      <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-3">
+      {/* --- REPOSITIONED FLOATING CONTACT TOGGLE --- */}
+      {/* Note the 'bottom' values: 
+          - Mobile (bottom-24): Keeps it above the sticky bottom nav 
+          - Desktop (md:bottom-8): Keeps it clean at the bottom
+      */}
+      <div className="fixed bottom-24 md:bottom-8 right-6 z-[999] flex flex-col items-end gap-3">
+        
         {/* Animated Options Menu */}
         <div className={`flex flex-col gap-3 transition-all duration-300 transform ${
           showOptions ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-10 opacity-0 scale-90 pointer-events-none'
         }`}>
           <ContactLink 
             href="https://wa.me/2349050252476" 
-            label="WhatsApp" 
+            label="WHATSAPP" 
             icon="💬" 
-            color="bg-green-500" 
+            color="bg-[#25D366]" 
           />
           <ContactLink 
             href="tel:+2349050252476" 
-            label="Call" 
+            label="CALL" 
             icon="📞" 
-            color="bg-blue-500" 
+            color="bg-zinc-800" 
           />
           <ContactLink 
-            href="mailto:www.weareiko@gmail.com" 
-            label="Email" 
+            href="mailto:weareiko@gmail.com" 
+            label="EMAIL" 
             icon="✉️" 
-            color="bg-pink-600" 
+            color="bg-zinc-800" 
           />
         </div>
 
-        {/* Main Toggle Button */}
+        {/* Main Toggle Button (Luxury Black Theme) */}
         <button
           onClick={() => setShowOptions(!showOptions)}
-          className={`w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition-all duration-500 ${
-            showOptions ? 'bg-zinc-800 rotate-90' : 'bg-black hover:bg-zinc-800'
+          className={`w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-xl transition-all duration-500 ${
+            showOptions ? 'bg-zinc-900 rotate-90 text-white' : 'bg-black text-white hover:scale-110'
           }`}
         >
           {showOptions ? '✕' : '💬'}
@@ -78,7 +81,6 @@ const App = () => {
   );
 };
 
-// Reusable Sub-component for Contact Options
 const ContactLink = ({ href, label, icon, color }) => (
   <a
     href={href}
@@ -86,10 +88,10 @@ const ContactLink = ({ href, label, icon, color }) => (
     rel="noopener noreferrer"
     className="flex items-center gap-3 group"
   >
-    <span className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold tracking-widest shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+    <span className="bg-black/90 text-white text-[9px] font-bold tracking-[0.2em] px-3 py-1 rounded-sm shadow-sm opacity-0 group-hover:opacity-100 transition-opacity uppercase">
       {label}
     </span>
-    <div className={`w-12 h-12 ${color} text-white rounded-full flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-110`}>
+    <div className={`w-11 h-11 ${color} text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110`}>
       {icon}
     </div>
   </a>
