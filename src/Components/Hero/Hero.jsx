@@ -53,9 +53,12 @@ const Hero = () => {
     <div className="w-full bg-black overflow-x-hidden">
       <section
         id="home"
-        className="relative flex flex-col md:flex-row w-full bg-black text-white pt-0 min-h-[85vh] md:min-h-screen items-stretch"
+        /* SENIOR FIX: Added mt-[80px] on mobile to clear the fixed branding bar.
+          Desktop remains md:mt-0 because the Navbar spacer handles it there.
+        */
+        className="relative flex flex-col md:flex-row w-full bg-black text-white mt-[80px] md:mt-0 min-h-[85vh] md:min-h-screen items-stretch"
       >
-        <div className="w-full md:w-1/2 flex flex-col justify-start md:justify-center items-center md:items-start px-8 pt-6 pb-16 md:pb-32 md:pl-12 lg:pl-20 xl:pl-32 z-20">
+        <div className="w-full md:w-1/2 flex flex-col justify-start md:justify-center items-center md:items-start px-8 pt-10 pb-16 md:pb-32 md:pl-12 lg:pl-20 xl:pl-32 z-20">
           <div className="max-w-full -mt-4 md:-mt-24 lg:-mt-32">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif mb-4 md:mb-6 tracking-widest uppercase leading-tight text-center md:text-left">
               WearEiko
@@ -74,7 +77,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* IMAGE SLIDER AREA - Adjusted height to prevent head cutoff */}
+        {/* IMAGE SLIDER AREA */}
         <div className="w-full md:w-1/2 h-[70vh] md:h-auto relative overflow-hidden bg-black order-first md:order-last">
           <img
             key={index}
